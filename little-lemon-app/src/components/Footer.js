@@ -1,52 +1,69 @@
-import React from 'react';
-import logo from '../assets/Logo.svg';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-
-const Footer = () => {
+import { Link } from "react-router-dom";
+export default function Footer() {
   return (
     <footer>
-    <div className="logo-container">
-        <img src={logo} alt="Logo" />
-      </div>
-      <section className="doormat-navigation">
-        <h3>Doormat Navigation</h3>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Reservations</li>
-          <li>Order Online</li>
-          <li>Login</li>
-        </ul>
-      </section>
+      <menu>
+        <li className="img-footer">
+          <img
+            src={require("../assets/footer-logo.png")}
+            alt="Little Lemon logo"
+          ></img>
+        </li>
+        <li className="contact">
+          <h1 className="footer-header">Navigation</h1>
+          <ul className="footer-links">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <a
+              href={require("../assets/menu.webp")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Menu
+            </a>
+            <Link to="/reservations">Reservations</Link>
+            <Link to="/order">Order</Link>
+            <Link to="/login">Login</Link>
+          </ul>
+        </li>
 
-      <section className="contact-us">
-        <h3>Contact Us</h3>
-        <ul>
-          <li>Address: 123 Main St, Cityville</li>
-          <li>Phone: (123) 456-7890</li>
-          <li>Email: example@example.com</li>
-        </ul>
-      </section>
-
-      <section className="social-media">
-        <h3>Follow Us</h3>
-        <ul className="social-icons">
-          <li>
-            <FaFacebook />
-          </li>
-          <li>
-            <FaTwitter />
-          </li>
-          <li>
-            <FaInstagram />
-          </li>
-        </ul>
-      </section>
-
-      
+        <li>
+          <h1 className="footer-header">Contact</h1>
+          <ul className="footer-links">
+            <li>2395 Maldove Way,</li>
+            <li>Chicago Illinois</li>
+            <br></br>
+            <li>(629)-243-6827</li>
+            <br></br>
+            <a
+              href="mailto: info@littlelemon.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              info@littlelemon.com
+            </a>
+          </ul>
+        </li>
+        <li>
+          <h1 className="footer-header">Connect</h1>
+          <ul className="footer-links">
+            <a
+              href="https://www.facebook.com/thelittlelemonshop/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/littlelemonmoon/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+          </ul>
+        </li>
+      </menu>
     </footer>
   );
-};
-
-export default Footer;
+}
